@@ -310,7 +310,6 @@ body {
 }
 .tech-drama .technique-title { color: #B91C1C; }
 .tech-drama h4 { color: #B91C1C; }
-.tech-drama .technique-emoji-bg { background: #FEE2E2; }
 
 .tech-song {
   background: #FFFBEB;
@@ -318,6 +317,13 @@ body {
 }
 .tech-song .technique-title { color: #B45309; }
 .tech-song h4 { color: #B45309; }
+
+.tech-story {
+  background: #FFF8ED;
+  border-color: #FDE68A;
+}
+.tech-story .technique-title { color: #B45309; }
+.tech-story h4 { color: #B45309; }
 
 .tech-game {
   background: #EFF6FF;
@@ -399,83 +405,6 @@ body {
   font-weight: 800;
   color: var(--purple);
   white-space: nowrap;
-}
-
-/* ── DYNAMIC ACTIVITY ── */
-.dynamic-section {
-  background: linear-gradient(135deg, #F5F0FF 0%, #EFF6FF 100%);
-  border: 2.5px solid #DDD6FE;
-  border-radius: 20px;
-  padding: 28px;
-  margin-bottom: 16px;
-}
-.dynamic-section h3 {
-  font-family: 'Fredoka One', cursive;
-  font-size: 18px;
-  color: var(--purple);
-  margin-bottom: 16px;
-}
-.step-list { list-style: none; display: grid; gap: 14px; counter-reset: steps; }
-.step-list li {
-  counter-increment: steps;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-.step-list li::before {
-  content: counter(steps);
-  font-family: 'Fredoka One', cursive;
-  font-size: 15px;
-  min-width: 30px; height: 30px;
-  background: var(--purple);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.step-list li .step-content {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.6;
-  color: var(--ink2);
-}
-.step-list li .step-content strong { color: var(--ink); }
-
-/* Niños ficticios */
-.kids-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-  margin: 16px 0;
-}
-.kid-card {
-  background: var(--white);
-  border-radius: 14px;
-  padding: 14px 16px;
-  border: 2px solid #EDE9FE;
-}
-.kid-name {
-  font-family: 'Fredoka One', cursive;
-  font-size: 16px;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-.kid-age {
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--muted);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.kid-desc {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink2);
-  line-height: 1.5;
 }
 
 /* ── ERRORS ── */
@@ -622,9 +551,6 @@ body {
 .s-struct .section-num  { background: #F3E8FF; color: var(--purple); }
 .s-struct .section-line { background: var(--purple); }
 
-.s-dynamic .section-num  { background: #F0FDF4; color: #15803D; }
-.s-dynamic .section-line { background: #15803D; }
-
 .s-errors .section-num  { background: #FEE2E2; color: #B91C1C; }
 .s-errors .section-line { background: #B91C1C; }
 
@@ -662,13 +588,14 @@ body {
       </div>
       <div class="meta-chip">
         <span class="dot" style="background:var(--green)"></span>
-        7 secciones
+        6 secciones
       </div>
     </div>
   </div>
 
 
   <!-- ══ SECCIÓN 0: INTRODUCCIÓN ══ -->
+  <!-- Diapositiva S0 (Portada) + S1 (Pregunta de apertura) -->
   <div class="section s-intro">
     <div class="section-header">
       <div class="section-num">Intro</div>
@@ -683,10 +610,18 @@ body {
       <p>Hoy vamos a recorrer un camino sencillo: entender cómo aprenden los niños, conocer técnicas creativas con ejemplos reales que puedes usar el próximo domingo, y practicar juntos.</p>
       <p>¿Listos? Empecemos."</p>
     </div>
+
+    <div class="card" style="background:#FFF8F0;border-color:#EDE9FE;">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--purple);margin-bottom:10px;">💬 Pregunta de apertura — proyectar diapositiva</p>
+      <p style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--ink);margin-bottom:10px;">¿Cuándo fue la última vez que una clase los sorprendió?</p>
+      <p style="font-size:13px;font-weight:600;color:var(--muted);font-style:italic;margin-bottom:10px;">Dar un momento para que los maestros reflexionen o compartan brevemente. Luego retomar con la siguiente frase:</p>
+      <p style="font-size:14px;font-weight:700;color:var(--ink2);font-style:italic;">"Los niños no recuerdan lo que les dijiste, recuerdan cómo los hiciste sentir."</p>
+    </div>
   </div>
 
 
   <!-- ══ SECCIÓN 1: FUNDAMENTO ══ -->
+  <!-- Diapositiva S2 — 3 verdades / ¿Por qué ser creativos? -->
   <div class="section s-why">
     <div class="section-header">
       <div class="section-num">1</div>
@@ -725,267 +660,11 @@ body {
   </div>
 
 
-  <!-- ══ SECCIÓN 2: LAS 4 TÉCNICAS ══ -->
-  <div class="section s-tech">
-    <div class="section-header">
-      <div class="section-num">2</div>
-      <div class="section-title">Las 4 grandes técnicas creativas</div>
-      <div class="section-time">25 min</div>
-    </div>
-    <div class="section-line"></div>
-
-    <p style="font-size:14px;font-weight:600;color:var(--muted);margin-bottom:24px;">Presentar cada técnica con: definición + ejemplo vivo + consejo práctico.</p>
-
-    <!-- TÉCNICA 1 -->
-    <div class="technique tech-drama">
-      <div class="technique-header">
-        <div class="technique-emoji">🎭</div>
-        <div>
-          <div class="technique-title">Técnica 1: Drama / Dramatización</div>
-          <div class="technique-why">Los niños de 6-9 años disfrutan actuar — y cuando interpretan, sienten</div>
-        </div>
-      </div>
-
-      <h4>¿Qué es?</h4>
-      <p style="margin-bottom:14px;">Representar una historia bíblica usando el cuerpo, la voz y la expresión. No se necesitan disfraces elaborados — alcanza con un pañuelo, una silla o las manos.</p>
-
-      <div class="example-box">
-        <div class="ex-label">Ejemplo: El ciego Bartimeo — Marcos 10:46-52</div>
-        <p style="margin-bottom:10px;font-size:13px;"><strong>Roles:</strong> Jesús · Bartimeo · La multitud (todos los demás niños)</p>
-        <div class="dialogue">
-          <div class="dialogue-line"><span class="who">Bartimeo</span><span class="says">"¡Jesús, hijo de David, ten compasión de mí!" (sentado en el piso, ojos cerrados)</span></div>
-          <div class="dialogue-line"><span class="who">Multitud</span><span class="says">"¡Shhh, silencio!" (intentan callarlo)</span></div>
-          <div class="dialogue-line"><span class="who">Bartimeo</span><span class="says">Grita más fuerte</span></div>
-          <div class="dialogue-line"><span class="who">Jesús</span><span class="says">"¿Qué quieres que haga por ti?"</span></div>
-          <div class="dialogue-line"><span class="who">Bartimeo</span><span class="says">"¡Que pueda ver!"</span></div>
-          <div class="dialogue-line"><span class="who">Jesús</span><span class="says">"Tu fe te ha salvado." (Bartimeo abre los ojos y salta de alegría)</span></div>
-        </div>
-        <div class="divider"></div>
-        <p style="font-size:13px;"><strong>Reflexión posterior:</strong> "¿Cómo se sintió Bartimeo cuando la gente lo calló? ¿Y cuando Jesús lo escuchó?"</p>
-      </div>
-
-      <div class="tips">
-        <div class="tips-label">Tips para el maestro</div>
-        <ul>
-          <li>Ensaya tú primero en casa aunque sea 2 minutos</li>
-          <li>Si un niño no quiere actuar, puede ser "narrador"</li>
-          <li>Mantén los dramatizados en menos de 5 minutos</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- TÉCNICA 2 -->
-    <div class="technique tech-song">
-      <div class="technique-header">
-        <div class="technique-emoji">🎵</div>
-        <div>
-          <div class="technique-title">Técnica 2: Canciones con movimiento</div>
-          <div class="technique-why">La melodía es el mejor ancla de memoria que existe</div>
-        </div>
-      </div>
-
-      <h4>¿Qué es?</h4>
-      <p style="margin-bottom:14px;">Usar una canción que refuerce el mensaje central de la clase, con gestos o coreografía simple que los niños puedan seguir.</p>
-
-      <div class="example-box">
-        <div class="ex-label">Ejemplo 1: "Dios me cuida" — historia del Buen Pastor</div>
-        <p style="font-style:italic;margin-bottom:10px;font-size:13px;">
-          "Dios me cuida, me conoce,<br>
-          sabe mi nombre y me llama,<br>
-          soy su oveja, él es mi pastor,<br>
-          ¡nunca me abandona, no!"
-        </p>
-        <ul>
-          <li>"Dios me cuida" → abrazar el propio cuerpo</li>
-          <li>"Me conoce" → señalarse el pecho</li>
-          <li>"Sabe mi nombre" → señalarse a sí mismos</li>
-          <li>"Soy su oveja" → hacer cuernitos con los dedos</li>
-          <li>"¡Nunca me abandona!" → agitar las manos arriba</li>
-        </ul>
-      </div>
-
-      <div class="example-box">
-        <div class="ex-label">Ejemplo 2: Frase de anclaje cantada (cualquier clase)</div>
-        <p style="font-size:13px;margin-bottom:8px;">Convierte la verdad central de tu clase en un canto de 2 líneas. <strong>Ejemplo:</strong></p>
-        <p style="font-style:italic;font-size:14px;">"Dios cumple, cumple, cumple — ¡sus promesas cumple!"</p>
-        <p style="font-size:12px;color:var(--muted);margin-top:6px;">Repetir 3 veces, cada vez más rápido, con palmadas.</p>
-      </div>
-
-      <div class="tips">
-        <div class="tips-label">Tips para el maestro</div>
-        <ul>
-          <li>No necesitas saber cantar bien — solo cantar con confianza</li>
-          <li>Repite la canción al inicio y al cierre como "bookends"</li>
-          <li>Con niños de 8-9 años, pídeles que inventen los gestos</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- TÉCNICA 3 -->
-    <div class="technique tech-game">
-      <div class="technique-header">
-        <div class="technique-emoji">🎮</div>
-        <div>
-          <div class="technique-title">Técnica 3: Juegos dirigidos</div>
-          <div class="technique-why">En alerta aprenden mejor — y los juegos los ponen en alerta</div>
-        </div>
-      </div>
-
-      <h4>¿Qué es?</h4>
-      <p style="margin-bottom:14px;">Un juego con reglas claras, tiempo corto y conexión directa con el mensaje. No es tiempo libre — es <strong>aprendizaje en movimiento</strong>.</p>
-
-      <div class="example-box">
-        <div class="ex-label">Juego 1: "¿Verdad o mentira?" — 5 min · repaso de cualquier historia</div>
-        <p style="margin-bottom:8px;font-size:13px;">El maestro dice una frase. Si es verdad: los niños <strong>saltan</strong>. Si es mentira: <strong>se agachan</strong>.</p>
-        <p style="font-size:13px;margin-bottom:6px;"><strong>Frases ejemplo (historia de Noé):</strong></p>
-        <ul>
-          <li>"Noé construyó un arca" → ✅ saltar</li>
-          <li>"Noé metió tres animales" → ❌ agacharse</li>
-          <li>"Llovió 40 días y 40 noches" → ✅ saltar</li>
-          <li>"El arco iris fue señal de castigo" → ❌ agacharse</li>
-        </ul>
-        <p style="font-size:12px;color:var(--muted);margin-top:8px;">Variación: en vez de moverse, decir "¡Amén!" o "¡Noooo!"</p>
-      </div>
-
-      <div class="example-box">
-        <div class="ex-label">Juego 2: "La cadena de versículos" — 5 min · memorización</div>
-        <p style="font-size:13px;">El maestro dice la primera palabra del versículo. Un niño dice la siguiente. En cadena hasta completarlo. Si alguien falla, se empieza de nuevo (sin presión, con risas).</p>
-        <p style="font-size:13px;margin-top:8px;font-style:italic;">Versículo ejemplo: "Porque de tal manera amó Dios al mundo..." — Juan 3:16</p>
-      </div>
-
-      <div class="example-box">
-        <div class="ex-label">Juego 3: "Misión bíblica" — 8-10 min · aplicación práctica</div>
-        <p style="font-size:13px;margin-bottom:8px;">El maestro plantea una situación de la vida real. Los equipos tienen 1 minuto para decidir qué haría el personaje bíblico que estudiaron. Comparten su respuesta.</p>
-        <p style="font-size:13px;"><strong>Situación ejemplo (El Buen Samaritano):</strong><br>
-        <em>"Vas camino a la iglesia y ves a un compañero llorando solo en el parque. Llegas tarde. ¿Qué haces?"</em></p>
-      </div>
-
-      <div class="tips">
-        <div class="tips-label">Tips para todos los juegos</div>
-        <ul>
-          <li>Explica las reglas y haz un ensayo corto antes de jugar en serio</li>
-          <li>Nunca uses juegos para avergonzar a quien no sabe la respuesta</li>
-          <li>Ten listo el siguiente paso para cuando termine el juego</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- TÉCNICA 4 -->
-    <div class="technique tech-craft">
-      <div class="technique-header">
-        <div class="technique-emoji">✋</div>
-        <div>
-          <div class="technique-title">Técnica 4: Manualidades con propósito</div>
-          <div class="technique-why">Si el niño no puede explicar qué hizo, la manualidad no cumplió su objetivo</div>
-        </div>
-      </div>
-
-      <h4>¿Qué es?</h4>
-      <p style="margin-bottom:14px;">Una actividad con las manos que refuerza la enseñanza — no como relleno, sino como <strong>cierre significativo</strong>.</p>
-
-      <div class="example-box">
-        <div class="ex-label">Ejemplo: "Mi escudo de fe" — historia de David y Goliat</div>
-        <p style="font-size:13px;margin-bottom:8px;"><strong>Materiales:</strong> Cartón, papel de colores, marcadores</p>
-        <p style="font-size:13px;margin-bottom:8px;"><strong>Instrucción:</strong> Recortar la forma de un escudo. Escribir adentro:</p>
-        <ul>
-          <li>Una cosa que me da miedo</li>
-          <li>Una promesa de Dios que me ayuda con ese miedo</li>
-        </ul>
-        <div class="divider"></div>
-        <p style="font-size:13px;font-style:italic;">"David no tenía armadura, pero tenía fe. ¿Cuál es tu escudo?"</p>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ══ SECCIÓN 3: TIPOS DE APRENDIZAJE ══ -->
-  <div class="section s-types">
-    <div class="section-header">
-      <div class="section-num">3</div>
-      <div class="section-title">Tipos de aprendizaje</div>
-      <div class="section-time">5 min</div>
-    </div>
-    <div class="section-line"></div>
-
-    <p style="font-size:14px;font-weight:600;color:var(--muted);margin-bottom:16px;">Proyectar o entregar como handout. Una buena clase combina varios tipos.</p>
-
-    <div class="card" style="padding:0;overflow:hidden;">
-      <table class="ref-table">
-        <thead>
-          <tr>
-            <th>Tipo</th>
-            <th>Aprende…</th>
-            <th>Técnica ideal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="tipo-badge" style="background:#DBEAFE;color:#1D4ED8;">👁 Visual</span></td>
-            <td>Viendo imágenes</td>
-            <td>Láminas, objetos reales</td>
-          </tr>
-          <tr>
-            <td><span class="tipo-badge" style="background:#FEF9C3;color:#B45309;">👂 Auditivo</span></td>
-            <td>Escuchando y repitiendo</td>
-            <td>Canciones, rimas, voces</td>
-          </tr>
-          <tr>
-            <td><span class="tipo-badge" style="background:#FEE2E2;color:#B91C1C;">🏃 Kinestésico</span></td>
-            <td>Moviéndose</td>
-            <td>Dramas, juegos físicos</td>
-          </tr>
-          <tr>
-            <td><span class="tipo-badge" style="background:#F3E8FF;color:#7E22CE;">✋ Táctil</span></td>
-            <td>Con las manos</td>
-            <td>Manualidades</td>
-          </tr>
-          <tr>
-            <td><span class="tipo-badge" style="background:#DCFCE7;color:#15803D;">👥 Social</span></td>
-            <td>En grupo</td>
-            <td>Juegos cooperativos</td>
-          </tr>
-          <tr>
-            <td><span class="tipo-badge" style="background:#FFE4E6;color:#9F1239;">❤ Emocional</span></td>
-            <td>Sintiendo</td>
-            <td>Historias, reflexión, oración</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="speech" style="margin-top:16px;">
-      <p>"Una buena clase no elige uno solo — <strong>los combina</strong>. Pueden guardar esta tabla y consultarla antes de preparar su clase."</p>
-    </div>
-  </div>
-
-
-  <!-- ══ SECCIÓN 4: HERRAMIENTAS TECNOLÓGICAS ══ -->
-  <div class="section s-tools">
-    <div class="section-header">
-      <div class="section-num">4</div>
-      <div class="section-title">Herramientas tecnológicas</div>
-      <div class="section-time">5 min</div>
-    </div>
-    <div class="section-line"></div>
-
-    <div class="speech">
-      <p>"Hay recursos digitales que pueden hacer sus clases más dinámicas — y lo mejor es que la mayoría son gratis."</p>
-    </div>
-
-    <div class="card" style="background:#EFF6FF;border-color:#BFDBFE;display:flex;align-items:flex-start;gap:14px;">
-      <div style="font-size:28px;line-height:1;flex-shrink:0;margin-top:2px;">📋</div>
-      <div>
-        <p style="font-weight:800;color:var(--ink);font-size:15px;margin-bottom:4px;">Entregar / proyectar la Cheat Sheet de herramientas</p>
-        <p style="font-size:13px;font-weight:600;color:var(--ink2);">No se trata de usar tecnología siempre — se trata de <strong>tenerla lista cuando suma</strong>. La tarjeta queda para consultar antes de preparar cada clase.</p>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ══ SECCIÓN 5: ESTRUCTURA ══ -->
+  <!-- ══ SECCIÓN 2: ESTRUCTURA ══ -->
+  <!-- Diapositiva S3 — Clase creativa en 5 momentos -->
   <div class="section s-struct">
     <div class="section-header">
-      <div class="section-num">5</div>
+      <div class="section-num">2</div>
       <div class="section-title">Estructura de una clase creativa</div>
       <div class="section-time">5 min</div>
     </div>
@@ -1050,10 +729,306 @@ body {
   </div>
 
 
+  <!-- ══ SECCIÓN 3: TIPOS DE APRENDIZAJE ══ -->
+  <!-- Diapositiva S4 — Tipos de aprendizaje -->
+  <div class="section s-types">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">Tipos de aprendizaje</div>
+      <div class="section-time">5 min</div>
+    </div>
+    <div class="section-line"></div>
+
+    <p style="font-size:14px;font-weight:600;color:var(--muted);margin-bottom:16px;">Proyectar o entregar como handout. Una buena clase combina varios tipos.</p>
+
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Aprende…</th>
+            <th>Técnica ideal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tipo-badge" style="background:#DBEAFE;color:#1D4ED8;">👁 Visual</span></td>
+            <td>Viendo imágenes</td>
+            <td>Láminas, objetos reales</td>
+          </tr>
+          <tr>
+            <td><span class="tipo-badge" style="background:#FEF9C3;color:#B45309;">👂 Auditivo</span></td>
+            <td>Escuchando y repitiendo</td>
+            <td>Canciones, rimas, voces</td>
+          </tr>
+          <tr>
+            <td><span class="tipo-badge" style="background:#FEE2E2;color:#B91C1C;">🏃 Kinestésico</span></td>
+            <td>Moviéndose</td>
+            <td>Dramas, juegos físicos</td>
+          </tr>
+          <tr>
+            <td><span class="tipo-badge" style="background:#F3E8FF;color:#7E22CE;">✋ Táctil</span></td>
+            <td>Con las manos</td>
+            <td>Manualidades</td>
+          </tr>
+          <tr>
+            <td><span class="tipo-badge" style="background:#DCFCE7;color:#15803D;">👥 Social</span></td>
+            <td>En grupo</td>
+            <td>Juegos cooperativos</td>
+          </tr>
+          <tr>
+            <td><span class="tipo-badge" style="background:#FFE4E6;color:#9F1239;">❤ Emocional</span></td>
+            <td>Sintiendo</td>
+            <td>Historias, reflexión, oración</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="speech" style="margin-top:16px;">
+      <p>"Una buena clase no elige uno solo — <strong>los combina</strong>. Pueden guardar esta tabla y consultarla antes de preparar su clase."</p>
+    </div>
+  </div>
+
+
+  <!-- ══ SECCIÓN 4: LAS 4 TÉCNICAS ══ -->
+  <!-- Diapositivas S5 · S6 · S7 · S8 -->
+  <div class="section s-tech">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Las 4 grandes técnicas creativas</div>
+      <div class="section-time">25 min</div>
+    </div>
+    <div class="section-line"></div>
+
+    <p style="font-size:14px;font-weight:600;color:var(--muted);margin-bottom:24px;">Presentar cada técnica con: definición + ejemplo vivo + consejo práctico.</p>
+
+    <!-- TÉCNICA 1: STORYTELLING — Diapositiva S5 -->
+    <div class="technique tech-story">
+      <div class="technique-header">
+        <div class="technique-emoji">📖</div>
+        <div>
+          <div class="technique-title">Técnica 1: Storytelling</div>
+          <div class="technique-why">Narración bíblica con voz, gesto y objeto real</div>
+        </div>
+      </div>
+
+      <h4>¿Qué es?</h4>
+      <p style="margin-bottom:14px;">Contar la historia bíblica convirtiéndote en el personaje: usando la voz, el cuerpo y un objeto real que concentre la atención de los niños. No se necesitan escenarios — la voz del maestro es el escenario.</p>
+
+      <div class="example-box">
+        <div class="ex-label">Claves del storytelling efectivo</div>
+        <ul>
+          <li><strong>Voz + Objeto + Pausa dramática:</strong> Un objeto real en mano concentra todos los ojos en el mismo punto. La pausa antes del momento clave genera anticipación.</li>
+          <li><strong>El maestro se convierte en el personaje:</strong> Cambiar de voz, agacharse o susurrar — el cuerpo narra tanto como las palabras. No se necesita escenario.</li>
+          <li><strong>Termina con una pregunta, no con una respuesta:</strong> «¿Qué habrías hecho tú?» Esa pregunta lleva la historia a casa.</li>
+        </ul>
+      </div>
+
+      <div class="tips">
+        <div class="tips-label">Tips para el maestro</div>
+        <ul>
+          <li>Elige un objeto cotidiano que represente algo de la historia</li>
+          <li>Practica el cambio de voz en casa antes de la clase</li>
+          <li>La pausa dramática debe durar al menos 3 segundos</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TÉCNICA 2: DRAMA — Diapositiva S6 -->
+    <div class="technique tech-drama">
+      <div class="technique-header">
+        <div class="technique-emoji">🎭</div>
+        <div>
+          <div class="technique-title">Técnica 2: Drama / Dramatización</div>
+          <div class="technique-why">Los niños de 6-9 años disfrutan actuar — y cuando interpretan, sienten</div>
+        </div>
+      </div>
+
+      <h4>¿Qué es?</h4>
+      <p style="margin-bottom:14px;">Representar una historia bíblica usando el cuerpo, la voz y la expresión. No se necesitan disfraces elaborados — alcanza con un pañuelo, una silla o las manos.</p>
+
+      <div class="example-box">
+        <div class="ex-label">Ejemplo: El ciego Bartimeo — Marcos 10:46-52</div>
+        <p style="margin-bottom:10px;font-size:13px;"><strong>Roles:</strong> Jesús · Bartimeo · La multitud (todos los demás niños)</p>
+        <div class="dialogue">
+          <div class="dialogue-line"><span class="who">Bartimeo</span><span class="says">"¡Jesús, hijo de David, ten compasión de mí!" (sentado en el piso, ojos cerrados)</span></div>
+          <div class="dialogue-line"><span class="who">Multitud</span><span class="says">"¡Shhh, silencio!" (intentan callarlo)</span></div>
+          <div class="dialogue-line"><span class="who">Bartimeo</span><span class="says">Grita más fuerte</span></div>
+          <div class="dialogue-line"><span class="who">Jesús</span><span class="says">"¿Qué quieres que haga por ti?"</span></div>
+          <div class="dialogue-line"><span class="who">Bartimeo</span><span class="says">"¡Que pueda ver!"</span></div>
+          <div class="dialogue-line"><span class="who">Jesús</span><span class="says">"Tu fe te ha salvado." (Bartimeo abre los ojos y salta de alegría)</span></div>
+        </div>
+        <div class="divider"></div>
+        <p style="font-size:13px;"><strong>Reflexión posterior:</strong> "¿Cómo se sintió Bartimeo cuando la gente lo calló? ¿Y cuando Jesús lo escuchó?"</p>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-label">Otras variantes de drama</div>
+        <ul>
+          <li><strong>Mímica bíblica:</strong> Sin hablar, solo con gestos. El grupo adivina el personaje o la escena. Rápido, sin materiales, todos participan.</li>
+          <li><strong>Dilema moral:</strong> Una situación real, cercana a su vida. «¿Qué harías tú?» La discusión en grupo es la enseñanza.</li>
+        </ul>
+      </div>
+
+      <div class="tips">
+        <div class="tips-label">Tips para el maestro</div>
+        <ul>
+          <li>Ensaya tú primero en casa aunque sea 2 minutos</li>
+          <li>Si un niño no quiere actuar, puede ser "narrador"</li>
+          <li>Mantén los dramatizados en menos de 5 minutos</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TÉCNICA 3: JUEGOS — Diapositiva S7 -->
+    <div class="technique tech-game">
+      <div class="technique-header">
+        <div class="technique-emoji">🎮</div>
+        <div>
+          <div class="technique-title">Técnica 3: Juegos con propósito</div>
+          <div class="technique-why">En alerta aprenden mejor — y los juegos los ponen en alerta</div>
+        </div>
+      </div>
+
+      <h4>¿Qué es?</h4>
+      <p style="margin-bottom:14px;">Un juego con reglas claras, tiempo corto y conexión directa con el mensaje. No es tiempo libre — es <strong>aprendizaje en movimiento</strong>. Cada juego refuerza la enseñanza, nunca es relleno.</p>
+
+      <div class="example-box">
+        <div class="ex-label">Juego 1: "¿Verdad o mentira?" — 5 min · repaso de cualquier historia</div>
+        <p style="margin-bottom:8px;font-size:13px;">El maestro dice una frase. Si es verdad: los niños <strong>saltan</strong>. Si es mentira: <strong>se agachan</strong>.</p>
+        <p style="font-size:13px;margin-bottom:6px;"><strong>Frases ejemplo (historia de Noé):</strong></p>
+        <ul>
+          <li>"Noé construyó un arca" → ✅ saltar</li>
+          <li>"Noé metió tres animales" → ❌ agacharse</li>
+          <li>"Llovió 40 días y 40 noches" → ✅ saltar</li>
+          <li>"El arco iris fue señal de castigo" → ❌ agacharse</li>
+        </ul>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;">Variación: en vez de moverse, decir "¡Amén!" o "¡Noooo!"</p>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-label">Juego 2: "La cadena de versículos" — 5 min · memorización</div>
+        <p style="font-size:13px;">El maestro dice la primera palabra del versículo. Un niño dice la siguiente. En cadena hasta completarlo. Si alguien falla, se empieza de nuevo (sin presión, con risas).</p>
+        <p style="font-size:13px;margin-top:8px;font-style:italic;">Versículo ejemplo: "Porque de tal manera amó Dios al mundo..." — Juan 3:16</p>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-label">Juego 3: "Misión bíblica" — 8-10 min · aplicación práctica</div>
+        <p style="font-size:13px;margin-bottom:8px;">El maestro plantea una situación de la vida real. Los equipos tienen 1 minuto para decidir qué haría el personaje bíblico que estudiaron. Comparten su respuesta.</p>
+        <p style="font-size:13px;"><strong>Situación ejemplo (El Buen Samaritano):</strong><br>
+        <em>"Vas camino a la iglesia y ves a un compañero llorando solo en el parque. Llegas tarde. ¿Qué haces?"</em></p>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-label">Más juegos con propósito</div>
+        <ul>
+          <li><strong>Trivia Bíblica:</strong> Equipos, puntos, preguntas de la clase del día. El repaso se convierte en competencia amigable.</li>
+          <li><strong>Escape Room Bíblico:</strong> Pistas, candados de papel y misiones en equipo. Emoción y trabajo colaborativo.</li>
+          <li><strong>Semáforo de valores:</strong> El maestro presenta una situación. El niño levanta verde o rojo y explica por qué tomó esa decisión.</li>
+          <li><strong>Agentes Bíblicos:</strong> Cada niño recibe una tarjeta de misión secreta relacionada con la historia. Trabajan en equipo para completarla.</li>
+        </ul>
+      </div>
+
+      <div class="tips">
+        <div class="tips-label">Tips para todos los juegos</div>
+        <ul>
+          <li>Explica las reglas y haz un ensayo corto antes de jugar en serio</li>
+          <li>Nunca uses juegos para avergonzar a quien no sabe la respuesta</li>
+          <li>Ten listo el siguiente paso para cuando termine el juego</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TÉCNICA 4: MANUALIDADES — Diapositiva S8 -->
+    <div class="technique tech-craft">
+      <div class="technique-header">
+        <div class="technique-emoji">✋</div>
+        <div>
+          <div class="technique-title">Técnica 4: Manualidades con propósito</div>
+          <div class="technique-why">Si el niño no puede explicar qué hizo, la manualidad no cumplió su objetivo</div>
+        </div>
+      </div>
+
+      <h4>¿Qué es?</h4>
+      <p style="margin-bottom:14px;">Una actividad con las manos que refuerza la enseñanza — no como relleno, sino como <strong>cierre significativo</strong>.</p>
+
+      <div class="example-box">
+        <div class="ex-label">Ejemplo: "Mi escudo de fe" — historia de David y Goliat</div>
+        <p style="font-size:13px;margin-bottom:8px;"><strong>Materiales:</strong> Cartón, papel de colores, marcadores</p>
+        <p style="font-size:13px;margin-bottom:8px;"><strong>Instrucción:</strong> Recortar la forma de un escudo. Escribir adentro:</p>
+        <ul>
+          <li>Una cosa que me da miedo</li>
+          <li>Una promesa de Dios que me ayuda con ese miedo</li>
+        </ul>
+        <div class="divider"></div>
+        <p style="font-size:13px;font-style:italic;">"David no tenía armadura, pero tenía fe. ¿Cuál es tu escudo?"</p>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-label">Más manualidades con propósito</div>
+        <ul>
+          <li><strong>La regla de oro:</strong> Recortan una mano. En cada dedo escriben una forma de tratar bien a otros. Lo llevan a casa como recordatorio.</li>
+          <li><strong>Mi libro de oraciones:</strong> Doblan hojas para hacer un librito. Dibujan o escriben una oración por alguien que aman. Lo decoran y comparten.</li>
+          <li><strong>Semilla de promesa:</strong> Decoran una maceta de papel y siembran dentro una semilla con un versículo escrito. La parábola del sembrador.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TÉCNICA BONUS: CANCIONES CON MOVIMIENTO -->
+    <div class="technique tech-song">
+      <div class="technique-header">
+        <div class="technique-emoji">🎵</div>
+        <div>
+          <div class="technique-title">Técnica bonus: Canciones con movimiento</div>
+          <div class="technique-why">La melodía es el mejor ancla de memoria que existe</div>
+        </div>
+      </div>
+
+      <h4>¿Qué es?</h4>
+      <p style="margin-bottom:14px;">Usar una canción que refuerce el mensaje central de la clase, con gestos o coreografía simple que los niños puedan seguir.</p>
+
+      <div class="example-box">
+        <div class="ex-label">Ejemplo 1: "Dios me cuida" — historia del Buen Pastor</div>
+        <p style="font-style:italic;margin-bottom:10px;font-size:13px;">
+          "Dios me cuida, me conoce,<br>
+          sabe mi nombre y me llama,<br>
+          soy su oveja, él es mi pastor,<br>
+          ¡nunca me abandona, no!"
+        </p>
+        <ul>
+          <li>"Dios me cuida" → abrazar el propio cuerpo</li>
+          <li>"Me conoce" → señalarse el pecho</li>
+          <li>"Sabe mi nombre" → señalarse a sí mismos</li>
+          <li>"Soy su oveja" → hacer cuernitos con los dedos</li>
+          <li>"¡Nunca me abandona!" → agitar las manos arriba</li>
+        </ul>
+      </div>
+
+      <div class="example-box">
+        <div class="ex-label">Ejemplo 2: Frase de anclaje cantada (cualquier clase)</div>
+        <p style="font-size:13px;margin-bottom:8px;">Convierte la verdad central de tu clase en un canto de 2 líneas. <strong>Ejemplo:</strong></p>
+        <p style="font-style:italic;font-size:14px;">"Dios cumple, cumple, cumple — ¡sus promesas cumple!"</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:6px;">Repetir 3 veces, cada vez más rápido, con palmadas.</p>
+      </div>
+
+      <div class="tips">
+        <div class="tips-label">Tips para el maestro</div>
+        <ul>
+          <li>No necesitas saber cantar bien — solo cantar con confianza</li>
+          <li>Repite la canción al inicio y al cierre como "bookends"</li>
+          <li>Con niños de 8-9 años, pídeles que inventen los gestos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
   <!-- ══ SECCIÓN 6: ERRORES COMUNES ══ -->
+  <!-- Diapositiva S9 — Errores que evitar -->
   <div class="section s-errors">
     <div class="section-header">
-      <div class="section-num">6</div>
+      <div class="section-num">5</div>
       <div class="section-title">Errores comunes a evitar</div>
       <div class="section-time">3 min</div>
     </div>
@@ -1084,10 +1059,35 @@ body {
   </div>
 
 
-  <!-- ══ SECCIÓN 7: CIERRE ══ -->
+  <!-- ══ SECCIÓN 7: HERRAMIENTAS TECNOLÓGICAS ══ -->
+  <!-- Sección de apoyo — presentar entre técnicas y errores -->
+  <div class="section s-tools">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Herramientas tecnológicas</div>
+      <div class="section-time">5 min</div>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="speech">
+      <p>"Hay recursos digitales que pueden hacer sus clases más dinámicas — y lo mejor es que la mayoría son gratis."</p>
+    </div>
+
+    <div class="card" style="background:#EFF6FF;border-color:#BFDBFE;display:flex;align-items:flex-start;gap:14px;">
+      <div style="font-size:28px;line-height:1;flex-shrink:0;margin-top:2px;">📋</div>
+      <div>
+        <p style="font-weight:800;color:var(--ink);font-size:15px;margin-bottom:4px;">Entregar / proyectar la Cheat Sheet de herramientas</p>
+        <p style="font-size:13px;font-weight:600;color:var(--ink2);">No se trata de usar tecnología siempre — se trata de <strong>tenerla lista cuando suma</strong>. La tarjeta queda para consultar antes de preparar cada clase.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══ SECCIÓN 8: CIERRE ══ -->
+  <!-- Diapositiva S10 — Cierre -->
   <div class="section s-close">
     <div class="section-header">
-      <div class="section-num">7</div>
+      <div class="section-num">Cierre</div>
       <div class="section-title">Cierre de la capacitación</div>
       <div class="section-time">3 min</div>
     </div>
