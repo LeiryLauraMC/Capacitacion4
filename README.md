@@ -7,4 +7,4 @@
 [Abrir proyección](https://leirylauramc.github.io/Resumen_Capacitacion4/)
 
 ## 📱 Guion 
-[Abrir guía](https://leirylauramc.github.io/Resumen_Capacitacion4/Guion_Capacitacion4.html)
+[Abrir guion](https://leirylauramc.github.io/Resumen_Capacitacion4/Guion_Capacitacion4.html)
